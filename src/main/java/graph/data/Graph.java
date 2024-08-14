@@ -1,4 +1,4 @@
-package graph;
+package graph.data;
 
 import lombok.Getter;
 
