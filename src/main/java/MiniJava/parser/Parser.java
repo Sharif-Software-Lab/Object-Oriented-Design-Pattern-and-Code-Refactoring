@@ -13,15 +13,20 @@ import MiniJava.scanner.token.Token;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
 public class Parser {
+    @Getter
     private ArrayList<Rule> rules;
     private Stack<Integer> parsStack;
+    @Getter
     private ParseTable parseTable;
+    @Getter
     private lexicalAnalyzer lexicalAnalyzer;
+    @Getter
     private CodeGeneratorFacade cg;
+    @Getter
     @Setter
     private boolean finish;
+    @Getter
     @Setter
     private Token lookAhead;
 
@@ -80,5 +85,17 @@ public class Parser {
             }
         }
         if (!ErrorHandler.hasError) cg.printMemory();
+    }
+
+    public int popStack(){
+        return parsStack.pop();
+    }
+
+    public int headStack() {
+        return parsStack.peek();
+    }
+
+    public void pushStack(int stack) {
+        parsStack.push(stack);
     }
 }

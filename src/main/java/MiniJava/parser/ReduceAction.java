@@ -11,13 +11,13 @@ public class ReduceAction extends Action{
     public void act(Parser parser) {
         Rule rule = parser.getRules().get(this.number);
         for (int i = 0; i < rule.RHS.size(); i++) {
-            parser.getParsStack().pop();
+            parser.popStack();
         }
 
-        Log.print(/*"state : " +*/ parser.getParsStack().peek() + "\t" + rule.LHS);
+        Log.print(/*"state : " +*/ parser.headStack() + "\t" + rule.LHS);
 //                        Log.print("LHS : "+rule.LHS);
-        parser.getParsStack().push(parser.getParseTable().getGotoTable(parser.getParsStack().peek(), rule.LHS));
-        Log.print(/*"new State : " + */parser.getParsStack().peek() + "");
+        parser.pushStack(parser.getParseTable().getGotoTable(parser.headStack(), rule.LHS));
+        Log.print(/*"new State : " + */parser.headStack() + "");
 //                        Log.print("");
         try {
             parser.getCg().semanticFunction(rule.semanticAction, parser.getLookAhead());
