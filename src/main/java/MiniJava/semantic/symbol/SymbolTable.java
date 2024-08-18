@@ -13,10 +13,10 @@ import java.util.Map;
 public class SymbolTable {
     private Map<String, Klass> klasses;
     private Map<String, Address> keyWords;
-    private Memory mem;
+    private MemoryFacade mem;
     private SymbolType lastType;
 
-    public SymbolTable(Memory memory) {
+    public SymbolTable(MemoryFacade memory) {
         mem = memory;
         klasses = new HashMap<>();
         keyWords = new HashMap<>();

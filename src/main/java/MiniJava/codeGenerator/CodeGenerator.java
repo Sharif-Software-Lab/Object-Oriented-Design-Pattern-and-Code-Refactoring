@@ -3,6 +3,7 @@ package MiniJava.codeGenerator;
 import MiniJava.Log.Log;
 import MiniJava.errorHandler.ErrorHandler;
 import MiniJava.scanner.token.Token;
+import MiniJava.semantic.symbol.MemoryFacade;
 import MiniJava.semantic.symbol.Symbol;
 import MiniJava.semantic.symbol.SymbolTable;
 import MiniJava.semantic.symbol.SymbolType;
@@ -20,7 +21,7 @@ public class CodeGenerator {
     private SymbolTable symbolTable;
 
     public CodeGenerator() {
-        symbolTable = new SymbolTable(memory);
+        symbolTable = new SymbolTable(new MemoryFacade(memory));
         //TODO
     }
 
