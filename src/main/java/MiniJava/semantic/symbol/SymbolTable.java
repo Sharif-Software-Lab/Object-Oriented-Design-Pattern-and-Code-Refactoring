@@ -1,7 +1,6 @@
 package MiniJava.semantic.symbol;
 
 import MiniJava.codeGenerator.Address;
-import MiniJava.codeGenerator.Memory;
 import MiniJava.codeGenerator.TypeAddress;
 import MiniJava.codeGenerator.varType;
 import MiniJava.errorHandler.ErrorHandler;
