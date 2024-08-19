@@ -43,6 +43,11 @@ currentAction.act(this);
 
 <img width="710" alt="image" src="https://github.com/user-attachments/assets/5111253c-fc71-47d4-862c-eedc4b1a1ef5">
 
+حال پلاگین formatter را به پروژه اضافه می‌کنیم و با اجرای کامند mvn formatter:format تمامی فایل‌های پروژه را فرمت می‌کنیم.
+
+<img width="1390" alt="image" src="https://github.com/user-attachments/assets/bba1ed83-115c-42ad-b200-43921e18f4cf">
+
+همانطور که مشخص است ۲۷ تا از ۳۵ تا فایل فرمت شده‌اند که در کامیت formatter:format فایل دیدن هستند. (فایل‌هایی که در پروژه graph قرار داشتند پوش نشدند.)
 
 
 
