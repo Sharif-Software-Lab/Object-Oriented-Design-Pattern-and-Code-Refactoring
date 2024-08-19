@@ -3,12 +3,13 @@ package graph;
 import graph.data.Edge;
 import graph.data.Graph;
 import graph.data.Node;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import graph.route.BusRouter;
 import graph.route.Router;
 import graph.route.TrainRouter;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 

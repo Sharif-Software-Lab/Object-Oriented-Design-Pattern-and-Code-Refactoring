@@ -19,9 +19,9 @@
 			<version>[0.9,1.19)</version>
 		</dependency>
 		<dependency>
-			<groupId>org.junit.vintage</groupId>
-			<artifactId>junit-vintage-engine</artifactId>
-			<version>[5.9.1,)</version>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-params</artifactId>
+			<version>5.11.0-M2</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
