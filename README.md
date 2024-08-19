@@ -27,6 +27,23 @@ Software engineering lab @ SUT
 currentAction.act(this);
 ```
 
+حال می‌خواهیم یک مورد separate query from modifier را اجرا کنیم. در کلاس Memory دو تابع getter با نام‌های getTemp و getDataAddress وجود دارند که علاوه بر وظیفه کوئری، آپدیت دیتا را هم انجام می‌دهند. برای بهبود کد دو تابع incrementTemp و incrementDataAddress اضافه می‌کنیم که جداگانه و هروقت که لازم بود این اعداد زیاد بشوند صدا زده می‌شوند.
+
+<img width="689" alt="image" src="https://github.com/user-attachments/assets/a27b8b69-4790-4e9d-8905-9f655ddb84db">
+
+در ادامه تکینک self encapsulated field را پیاده‌سازی میکنیم. در کلاس LexicalAnalyzer یک فیلد از نوع Matcher وجود دارد که همیشه بدون گتر و ستر از آن استفاده شده است. در ابتدا برای این فیلد ستر و گتر تعریف می‌کنیم و هرجا به مقدار آن نیاز داشتیم از گتر و هرکجا که نیاز داشتیم آن را ست کنیم از ستر استفاده می‌کنیم.
+
+<img width="960" alt="image" src="https://github.com/user-attachments/assets/a525436e-a1b4-4d6b-a041-286f0254da2e">
+
+در مورد از ما خواسته شده است که ۲ تکنیک دلخواه را پیاده‌سازی کنیم. این ۲ تکنیک Hide method و Encapsulate collection هستند. در اولی توابع public که توسط یک کلاس ارائه می‌شوند اما توسط هیچ کلاسی غیر از خودشان استفاده نمی‌شود می‌توانند به private تغییر کنند. این توابع در کلاس CodeGenerator بسیار زیاد هستند و فقط در خود کلاس استفاده می‌شوند. بنابراین signature این توابع را به private تغییر می‌دهیم.
+
+![telegram-cloud-photo-size-4-5915586992723313901-y](https://github.com/user-attachments/assets/d0bb85b3-1b03-46a3-a962-0817e312e68d)
+
+تکنیک دوم به این صورت کار می‌کند که اگر یک کلاس فیلدی از نوع کالکشن دارد نباید صرفا برای آن گتر و ستر داشته باشد، بلکه باید متود‌های Add, remove و getter داشته باشد به طوری که getter شی از نوع unmodifiable برگرداند. در پیاده‌سازی فعلی در کلاس Parser کالکشنی از نوع Stack<Integer> داریم که گتر دارد و از بیرون قابل تغییر است. برای جلوگیری از این کار برای این کالکشن توابع Pop, Head, Push را پیاده‌سازی می‌کنیم.
+
+<img width="710" alt="image" src="https://github.com/user-attachments/assets/5111253c-fc71-47d4-862c-eedc4b1a1ef5">
+
+
 
 
 
