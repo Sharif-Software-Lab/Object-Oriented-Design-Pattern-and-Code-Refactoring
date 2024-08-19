@@ -44,6 +44,7 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -53,6 +54,18 @@
                             <mainClass>MiniJava.Main</mainClass>
                         </manifest>
                     </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>net.revelc.code.formatter</groupId>
+                <artifactId>formatter-maven-plugin</artifactId>
+                <version>2.16.0</version>
+                <configuration>
+                    <configFile>formatter-maven-plugin/eclipse/java.xml</configFile>
+                    <configJsonFile>formatter-maven-plugin/jackson/json.properties</configJsonFile>
+                    <configXmlFile>formatter-maven-plugin/eclipse/xml.properties</configXmlFile>
+                    <encoding>UTF-8</encoding>
+                    <sourceDirectory>.</sourceDirectory>
                 </configuration>
             </plugin>
         </plugins>

@@ -8,7 +8,7 @@ public class ShiftAction extends Action{
 
     @Override
     public void act(Parser parser) {
-        parser.getParsStack().push(this.number);
+        parser.pushStack(this.number);
         parser.setLookAhead(parser.getLexicalAnalyzer().getNextToken());
     }
 
