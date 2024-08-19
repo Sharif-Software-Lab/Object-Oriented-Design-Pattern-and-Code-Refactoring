@@ -5,6 +5,7 @@ import MiniJava.scanner.token.Token;
 
 public class CodeGeneratorFacade {
     private final CodeGenerator codeGenerator;
+
     public CodeGeneratorFacade() {
         codeGenerator = new CodeGenerator();
     }

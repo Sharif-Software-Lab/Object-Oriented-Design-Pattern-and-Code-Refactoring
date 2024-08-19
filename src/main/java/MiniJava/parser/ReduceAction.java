@@ -2,7 +2,7 @@ package MiniJava.parser;
 
 import MiniJava.Log.Log;
 
-public class ReduceAction extends Action{
+public class ReduceAction extends Action {
     public ReduceAction(int number) {
         super(number);
     }
@@ -14,11 +14,11 @@ public class ReduceAction extends Action{
             parser.popStack();
         }
 
-        Log.print(/*"state : " +*/ parser.headStack() + "\t" + rule.LHS);
-//                        Log.print("LHS : "+rule.LHS);
+        Log.print(/* "state : " + */ parser.headStack() + "\t" + rule.LHS);
+        // Log.print("LHS : "+rule.LHS);
         parser.pushStack(parser.getParseTable().getGotoTable(parser.headStack(), rule.LHS));
-        Log.print(/*"new State : " + */parser.headStack() + "");
-//                        Log.print("");
+        Log.print(/* "new State : " + */parser.headStack() + "");
+        // Log.print("");
         try {
             parser.getCg().semanticFunction(rule.semanticAction, parser.getLookAhead());
         } catch (Exception e) {

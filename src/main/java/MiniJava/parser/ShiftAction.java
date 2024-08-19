@@ -1,6 +1,6 @@
 package MiniJava.parser;
 
-public class ShiftAction extends Action{
+public class ShiftAction extends Action {
 
     public ShiftAction(int number) {
         super(number);

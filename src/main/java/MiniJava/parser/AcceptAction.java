@@ -1,6 +1,6 @@
 package MiniJava.parser;
 
-public class AcceptAction extends Action{
+public class AcceptAction extends Action {
     public AcceptAction(int number) {
         super(number);
     }

@@ -50,13 +50,14 @@ public class ParseTable {
                     if (cols[j].equals("acc")) {
                         actionTable.get(actionTable.size() - 1).put(terminals.get(j), new AcceptAction(0));
                     } else if (terminals.containsKey(j)) {
-//                        try {
+                        // try {
                         Token t = terminals.get(j);
-                        Action a = cols[j].charAt(0) == 'r' ? new ReduceAction(Integer.parseInt(cols[j].substring(1))): new ShiftAction(Integer.parseInt(cols[j].substring(1)));
+                        Action a = cols[j].charAt(0) == 'r' ? new ReduceAction(Integer.parseInt(cols[j].substring(1)))
+                                : new ShiftAction(Integer.parseInt(cols[j].substring(1)));
                         actionTable.get(actionTable.size() - 1).put(t, a);
-//                        }catch (StringIndexOutOfBoundsException e){
-//                            e.printStackTrace();
-//                        }
+                        // }catch (StringIndexOutOfBoundsException e){
+                        // e.printStackTrace();
+                        // }
                     } else if (nonTerminals.containsKey(j)) {
                         gotoTable.get(gotoTable.size() - 1).put(nonTerminals.get(j), Integer.parseInt(cols[j]));
                     } else {
@@ -68,13 +69,13 @@ public class ParseTable {
     }
 
     public int getGotoTable(int currentState, NonTerminal variable) {
-//        try {
+        // try {
         return gotoTable.get(currentState).get(variable);
-//        }catch (NullPointerException dd)
-//        {
-//            dd.printStackTrace();
-//        }
-//        return 0;
+        // }catch (NullPointerException dd)
+        // {
+        // dd.printStackTrace();
+        // }
+        // return 0;
     }
 
     public Action getActionTable(int currentState, Token terminal) {
